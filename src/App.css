@@ -1,38 +1,205 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.App {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffe8;
+}
+
+.line {
+    display: flex;
+}
+.line .cell {
+    height: 24px;
+    width: 24px;
+    background: center / cover url('./assets/object/closed.svg') no-repeat;
+}
+.line .cell.value0 {
+    background-image: url('./assets/type/type0.svg');
+}
+.line .cell.value1 {
+    background-image: url('./assets/type/type1.svg');
+}
+.line .cell.value2 {
+    background-image: url('./assets/type/type2.svg');
+}
+.line .cell.value3 {
+    background-image: url('./assets/type/type3.svg');
+}
+.line .cell.value4 {
+    background-image: url('./assets/type/type4.svg');
+}
+.line .cell.value5 {
+    background-image: url('./assets/type/type5.svg');
+}
+.line .cell.value6 {
+    background-image: url('./assets/type/type6.svg');
+}
+.line .cell.value7 {
+    background-image: url('./assets/type/type7.svg');
+}
+.line .cell.value8 {
+    background-image: url('./assets/type/type8.svg');
+}
+.line .cell.value-1 {
+    background-image: url('./assets/object/mine.svg');
+}
+.line .cell.clicked.value-1 {
+    background-image: url('./assets/object/mine_red.svg');
+}
+.line .cell.marked {
+    background-image: url('./assets/object/flag.svg');
+}
+.line .cell.misflagged {
+    background-image: url('./assets/object/mine_wrong.svg');
+}
+
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    padding: 4px;
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255) rgb(128, 128, 128);
+}
+
+.digits {
+    display: flex;
+    background-color: #000;
+    border-style: solid;
+    border-width: 2px;
+    border-color: rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255) rgb(128, 128, 128);
+}
+.digits .digit {
+    height: 36px;
+    width: 20px;
+    background: center / contain url('./assets/digit/d0.svg') no-repeat;
+}
+.digits .digit + .digit {
+    margin-left: 2px;
+}
+.digits .digit.value1 {
+    background-image: url('./assets/digit/d1.svg');
+}
+.digits .digit.value2 {
+    background-image: url('./assets/digit/d2.svg');
+}
+.digits .digit.value3 {
+    background-image: url('./assets/digit/d3.svg');
+}
+.digits .digit.value4 {
+    background-image: url('./assets/digit/d4.svg');
+}
+.digits .digit.value5 {
+    background-image: url('./assets/digit/d5.svg');
+}
+.digits .digit.value6 {
+    background-image: url('./assets/digit/d6.svg');
+}
+.digits .digit.value7 {
+    background-image: url('./assets/digit/d7.svg');
+}
+.digits .digit.value8 {
+    background-image: url('./assets/digit/d8.svg');
+}
+.digits .digit.value9 {
+    background-image: url('./assets/digit/d9.svg');
+}
+
+.game-button {
+    height: 40px;
+    width: 40px;
+    background: center / cover url('./assets/object/face_unpressed.svg') no-repeat;
+}
+.game-button.win {
+    background-image: url('./assets/object/face_win.svg');
+}
+.game-button.lose {
+    background-image: url('./assets/object/face_lose.svg');
+}
+
+.level-selection {
+    width: fit-content;
+    background-color: #c6c6c6;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255) rgb(128, 128, 128) rgb(128, 128, 128) rgb(255, 255, 255);
+    margin-bottom: 8px;
+    padding: 8px;
+}
+.level-selection .inner {
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255) rgb(128, 128, 128);
+    padding: 4px;
+    display: flex;
+}
+.level-selection .inner .level {
+    height: 36px;
+    width: 120px;
+    line-height: 36px;
+    text-align: center;
+    color: white;
+}
+.level-selection .inner .level.active {
+    color: #fff;
+    line-height: 32px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255) rgb(128, 128, 128) rgb(128, 128, 128) rgb(255, 255, 255);
+}
+
+.game-board {
+    margin: auto;
+    background-color: rgb(198, 198, 198);
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgb(255, 255, 255) rgb(128, 128, 128) rgb(128, 128, 128) rgb(255, 255, 255);
+    padding: 16px;
+    width: fit-content;
+}
+.game-board .game-map {
+    border-width: 4px;
+    border-style: solid;
+    border-color: rgb(128, 128, 128) rgb(255, 255, 255) rgb(255, 255, 255) rgb(128, 128, 128);
 }
